@@ -6,7 +6,7 @@ The algorithm used in this tool was based on the one original SU Workshop. It wa
 What works
 ==========
 - Decode and display game file contents (XML files)
-- UI tabs (open several simultaneous files
+- UI tabs (open several simultaneous files)
 - Data search
 
 What's next
