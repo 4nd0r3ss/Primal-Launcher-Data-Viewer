@@ -11,5 +11,6 @@ What works
 
 What's next
 ===========
+- Game installation path selection
 - Game 3D models viewer
 - Allow game data files editing for fan transalation projects (including cutscene subtitles)
