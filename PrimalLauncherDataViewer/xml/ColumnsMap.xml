@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<root>
+	<table name="gameCommandBasic">
+		<column></column>
+		<column>Class</column>
+		<column>Level</column>
+		<column></column>
+		<column>Cast time</column>
+		<column>Recast Timer</column>
+		<column>MP Cost</column>
+		<column>TP Cost</column>
+		<column></column>
+	</table>
+	<table name="boot_skillequip">		
+		<column>Main Weapon</column>
+		<column>Sec. Weapon</column>
+		<column>Unknown 1</column>
+		<column>Unknown 2</column>
+		<column>Throwing</column>
+		<column>Pack</column>
+		<column>Pouch</column>
+		<column>Head</column>
+		<column>Body</column>
+		<column>Legs</column>
+		<column>Hands</column>
+		<column>Feet</column>
+		<column>Waist</column>
+		<column>Neck</column>
+		<column>Right Ear</column>
+		<column>Left Ear</column>
+		<column>Left Index</column>
+		<column>Right Index</column>
+		<column>Right Finger</column>
+		<column>Left Finger</column>
+		<column>Unknown 3</column>
+		<column>Unknown 4</column>
+	</table>
+	<table name="itemData">
+		<column>Durability</column>
+		<column></column>
+		<column>Icon id?</column>
+		<column>Item Kind</column>
+		<column></column>
+		<column></column>
+		<column></column>
+		<column></column>
+		<column></column>
+		<column></column>
+		<column>Level</column>
+		<column></column>
+		<column></column>
+		<column></column>
+		<column></column>
+		<column></column>
+		<column></column>
+		<column></column>
+		<column></column>
+		<column></column>
+		<column></column>
+		<column></column>
+		<column></column>
+		<column></column>
+		<column></column>
+	</table>
+	<table name="_item">
+		<column>Category</column>
+		<column>Max  Stack</column>
+		<column>Is Unique</column>
+		<column>Is Rare</column>
+	</table>
+	<table name="actorclass_graphic">		
+		<column>Base Model</column>
+		<column>Size</column>
+		<column>Hair style</column>
+		<column>Hair high</column>
+		<column>Hair variation</column>
+		<column>Face type</column>
+		<column>Characteristics</column>
+		<column>Charac. color</column>
+		<column>Eyebrows</column>
+		<column>Iris size</column>
+		<column>Eye shape</column>
+		<column>Nose</column>
+		<column>Features</column>
+		<column>Mouth</column>
+		<column>Ears</column>
+		<column>Hair color</column>
+		<column>Skin color</column>
+		<column>Eye color</column>
+		<column>Voice</column>
+		<column>Main Hand</column>
+		<column>Off hand</column>
+		<column>spMainHand</column>
+		<column>spOffHand</column>
+		<column>Throwing</column>
+		<column>Pack</column>
+		<column>Pouch</column>
+		<column>Head</column>
+		<column>Body</column>
+		<column>Legs</column>
+		<column>Hands</column>
+		<column>Feet</column>
+		<column>Waist</column>
+		<column>Neck</column>
+		<column>L Ear</column>
+		<column>R Ear</column>
+		<column>L Index</column>
+		<column>R Index</column>
+		<column>L Finger</column>
+		<column>R Finger</column>
+		<column></column>
+		<column></column>
+	</table>
+</root>

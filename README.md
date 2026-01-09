@@ -1,7 +1,7 @@
 # Primal-Launcher-Data-Viewer
 A simple tool to decode and show data from FFXIV1.23b game files. 
-Original algorithm used to decode the files: http://http://seventhumbral.org/downloads.php
-The algorithm used in this tool was based on the one original SU Workshop. It was translated from C++ to C# and I also made some improvements for speed and readability.
+
+The file decode algorithm used in this project was based on the Seventh Umbral Workshop app (http://www.seventhumbral.org/downloads.php). It was translated from C++ to C# and I also made some improvements for speed and readability.
 
 What works
 ==========

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.IO;
@@ -9,8 +10,7 @@ using System.Xml;
 namespace PrimalLauncherDataViewer
 {
     class GameDataFile
-    {
-        private const string DATAFILE_PATH = @"d:\FINAL_FANTASY_XIV\data";
+    {        
         public Dictionary<string, uint> Index { get; set; }
         public string Language { get; set; } = "en"; //default lang is english. Opitons are: ja, en, de, fr, chs.
 
@@ -19,10 +19,32 @@ namespace PrimalLauncherDataViewer
         {
             LoadGameDataIndex();
 
+            string file = string.Empty;
+            Stream stream = typeof(GameDataFile).Assembly.GetManifestResourceStream("PrimalLauncherDataViewer.xml.ColumnsMap.xml");
+
+            if (stream != null)
+                using (stream)
+                using (StreamReader sr = new StreamReader(stream))
+                    file = sr.ReadToEnd();
+
             //load xml file with column names
-            string file = Encoding.Default.GetString(File.ReadAllBytes("ColumnsMap.xml"));
+            //string file = Encoding.Default.GetString(File.ReadAllBytes("ColumnsMap.xml"));
             ColumnsMap.LoadXml(file);
         }
+
+        public static string GetGameInstallPath()
+        {
+            string gameInstalPath = null;
+            const string GAME_INSTALL_REGKEY = @"SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{F2C4E6E0-EB78-4824-A212-6DF6AF0E8E82}";
+            using (RegistryKey key = Registry.LocalMachine.OpenSubKey(GAME_INSTALL_REGKEY))
+            {
+                if (key != null)
+                    gameInstalPath = key.GetValue("InstallLocation").ToString() + @"\" + key.GetValue("DisplayName").ToString() + @"\";
+            }
+
+            return gameInstalPath;
+        }
+
         public DataTable GetGameData(string indexName)
         {          
             XmlDocument infoFile = new XmlDocument();
@@ -156,7 +178,8 @@ namespace PrimalLauncherDataViewer
         }
         private string GetFilePath(uint fileNumber)
         {
-            return DATAFILE_PATH + @"\" + ((byte)(fileNumber >> 24)).ToString("X2") + @"\" + ((byte)(fileNumber >> 16)).ToString("X2") + @"\" + ((byte)(fileNumber >> 8)).ToString("X2") + @"\" + ((byte)(fileNumber >> 32)).ToString("X2") + ".dat";
+            var dataFilePath = GetGameInstallPath() + @"\data";
+            return dataFilePath + @"\" + ((byte)(fileNumber >> 24)).ToString("X2") + @"\" + ((byte)(fileNumber >> 16)).ToString("X2") + @"\" + ((byte)(fileNumber >> 8)).ToString("X2") + @"\" + ((byte)(fileNumber >> 32)).ToString("X2") + ".dat";
         }
         private Type GetNodeType(string typeText)
         {
